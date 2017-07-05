@@ -1,0 +1,6 @@
+[submodule "lib/quickflux"]
+	path = lib/quickflux
+	url = https://github.com/benlau/quickflux.git
+[submodule "lib/spdlog"]
+	path = lib/spdlog
+	url = https://github.com/gabime/spdlog.git
