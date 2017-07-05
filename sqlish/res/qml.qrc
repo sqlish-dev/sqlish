@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Actions/ActionTypes.qml</file>
+        <file>Actions/AppActions.qml</file>
+        <file>Actions/qmldir</file>
+        <file>Components/Page1.qml</file>
+        <file>Middlewares/NavigationMiddleware.qml</file>
+        <file>Middlewares/NetworkMiddleware.qml</file>
+        <file>Stores/MainStore.qml</file>
+        <file>Stores/qmldir</file>
+        <file>Stores/RootStore.qml</file>
+        <file>Assets/MainIcon.ico</file>
+    </qresource>
+</RCC>
