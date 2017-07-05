@@ -24,7 +24,7 @@ CONFIG(debug, debug|release){
     DEFINES += _DEBUG
 }
 
-QT += qml quick
+QT += qml quick widgets concurrent
 
 CONFIG += c++11
 

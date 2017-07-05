@@ -12,5 +12,7 @@
         <file>Stores/qmldir</file>
         <file>Stores/RootStore.qml</file>
         <file>Assets/MainIcon.ico</file>
+        <file>Components/SystemTrayIcon.qml</file>
+        <file>Assets/MainIcon.png</file>
     </qresource>
 </RCC>

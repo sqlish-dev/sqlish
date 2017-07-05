@@ -35,4 +35,6 @@ ApplicationWindow {
 			text: qsTr("Second")
 		}
 	}
+
+	SystemTrayIcon {}
 }
