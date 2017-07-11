@@ -14,27 +14,4 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
-<context>
-    <name>main</name>
-    <message>
-        <location filename="../res/main.qml" line="10"/>
-        <source>Hello World</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../res/main.qml" line="22"/>
-        <source>Second page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../res/main.qml" line="32"/>
-        <source>First</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../res/main.qml" line="35"/>
-        <source>Second</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
 </TS>

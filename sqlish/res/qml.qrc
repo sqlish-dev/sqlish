@@ -5,7 +5,6 @@
         <file>Actions/ActionTypes.qml</file>
         <file>Actions/AppActions.qml</file>
         <file>Actions/qmldir</file>
-        <file>Components/Page1.qml</file>
         <file>Middlewares/NavigationMiddleware.qml</file>
         <file>Middlewares/NetworkMiddleware.qml</file>
         <file>Stores/MainStore.qml</file>
@@ -14,5 +13,10 @@
         <file>Assets/MainIcon.ico</file>
         <file>Components/SystemTrayIcon.qml</file>
         <file>Assets/MainIcon.png</file>
+        <file>Components/ObjectBrowser.qml</file>
+        <file>Components/JSONListModel.qml</file>
+        <file>Components/jsonpath.js</file>
+        <file>Components/Accordion.qml</file>
+        <file>Components/triangle.svg</file>
     </qresource>
 </RCC>
