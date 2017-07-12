@@ -18,5 +18,6 @@
         <file>Components/jsonpath.js</file>
         <file>Components/Accordion.qml</file>
         <file>Components/triangle.svg</file>
+        <file>Assets/expander.png</file>
     </qresource>
 </RCC>

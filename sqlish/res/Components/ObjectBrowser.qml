@@ -1,55 +1,111 @@
-﻿import QtQuick 2.4
+﻿import QtQuick 2.2
+import QtQuick.Controls 1.1
+import QtQuick.Layouts 1.1
 
-Accordion {
-	anchors.fill: parent
-	anchors.margins: 10
-	visible: true
+Item {
+	id: root
+	width: 600 // change to parent.width
+	height: 500// change to parent.height
 
-	model: [
-		{
-			"label": "Cash",
-			'value':'$4418.28',
-			'children': [
-				{
-					'label': 'Float',
-					'value': '$338.72'
-				},
-				{
-					'label': 'Cash Sales',
-					'value': '$4059.56'
-				},
-				{
-					'label': 'In/Out',
-					'value': '-$50.00',
-					'children': [
-						{
-							'label': 'coffee/creamer',
-							'value': '-$40.00'
-						},
-						{
-							'label': 'staples & paper',
-							'value': '-$10.00'
+	ListView {
+		id: rootView
+		anchors.fill: parent
+		delegate: groupsDelegate
+		model: listModel
+		highlight: Rectangle {color: "lightsteelblue"; radius: 6}
+//        focus: true
+
+		Component {
+			id: groupsDelegate
+
+			Item {
+				id: container
+				width: 200
+				height: childrenRect.height
+
+				Column {
+					x: 14
+					id: mainColumn
+
+					Row {
+						id: mainRow
+						spacing: 3
+						property bool expanded: false
+
+						Image {
+							id: expander
+							source: "../Assets/expander.png"
+							rotation: mainRow.expanded ? 90 : 0
+							opacity: elements.count === 0 ? 0 : 1
+							Behavior on rotation {
+								NumberAnimation {duration: 110}
+							}
+
+							MouseArea {
+								visible: expander.opacity === 1 ? true : false
+								id: expanderMouseArea
+								anchors.fill: parent
+								onClicked: {
+									mainRow.expanded = !mainRow.expanded
+									console.log(container.height)
+								}
+							}
 						}
 
-					]
+						Text {
+							id: name
+							text: group
+						}
+					}
+
+					Item {
+						width: 200
+						height: childView.contentHeight
+						visible: mainRow.expanded
+
+						ListView {
+							id: childView
+							anchors.fill: parent
+//                            visible: mainRow.expanded
+							model: elements
+							delegate: groupsDelegate
+							highlight: Rectangle {color: "lightsteelblue"; radius: 5}
+							focus: true
+						}
+					}
 				}
 
-			]
-		},
-		{
-			'label': 'Card',
-			'value': '$3314.14',
-			'children': [
-				{
-					'label': 'Debit',
-					'value': '$1204.04'
-				},
-				{
-					'label': 'Credit',
-					'value': '$2110.10'
-				}
-			]
+				//                                        ListView {
+				//                                            anchors.right: parent.right
+				//                                            visible: mainRow.expanded
+				//                                            model: elements
+				//                                            delegate: groupsDelegate
+				//                                        }
+			}
 		}
 
-	]
+		ListModel {
+			id:listModel
+			ListElement {group: "first"; elements: []}
+			ListElement {
+				group: "second"
+				elements: [
+					ListElement {
+						group: "second2"
+						elements: [
+							ListElement {
+								group: "second2.2"
+								elements: []
+							}
+						]
+					},
+					ListElement {group: "second3"; elements: []},
+					ListElement {group: "second4"; elements: []}
+				]
+			}
+			ListElement {group: "third"; elements: []}
+		}
+	}
+
+
 }
